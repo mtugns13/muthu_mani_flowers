@@ -1,0 +1,88 @@
+.abc {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-family: Arial;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-end;
+    
+}
+
+.Buttons {
+    flex-direction: row !important;
+    display: flex !important;
+    
+}
+.sele {
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    width: auto;
+    min-width: 200px;
+    text-size-adjust: auto;
+}
+
+.ipText{
+    min-width: 200px;
+    height: fit-content;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    flex-direction: row;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    text-align: left;
+    text-size-adjust: auto;
+    float: none;
+    position: relative;
+    padding-left: auto ;
+}
+
+.ipText2{
+    min-width: 200px;
+    height: fit-content;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    flex-direction: column;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    text-align: left;
+    text-size-adjust: auto;
+    float: none;
+    position: relative;
+    padding-left: auto ;
+}
+
+.ipText1{
+    min-width: auto;
+    padding-left: auto ;
+    position: relative;
+    right: 30px;
+    height: 30px;
+    float: none;
+    font-size: 20px;
+    margin-left: 0;
+    margin-top: 10px;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.active{
+    background-color:red;
+    padding: 10px;
+    font-family: Arial;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: flex-end;
+}
