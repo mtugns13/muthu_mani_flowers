@@ -281,6 +281,7 @@ function HomePage(props) {
             </>
         </>
     }
+    
     useEffect(() => {
         { compName() }
         { buttons() }
