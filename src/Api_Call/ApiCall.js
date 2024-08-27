@@ -115,3 +115,13 @@ export function getProfit(dat) {
         return dat;
     }
 }
+
+export function generateReportApi() {
+    console.log("generateReport")
+    
+        let url = baseUrl+"getReport";
+
+        console.log("res")
+        getCallWithoutReducer(url, null, onSuccessGetData)
+    
+}
