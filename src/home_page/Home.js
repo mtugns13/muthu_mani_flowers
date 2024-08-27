@@ -1,5 +1,5 @@
 import { Button } from "primereact/button"
-import { getData, getDaySalesDiff, addExpenses, getProfit, saveCustomerData , viewExpenses} from "../Api_Call/ApiCall"
+import { getData, getDaySalesDiff, addExpenses, getProfit, saveCustomerData , viewExpenses,generateReportApi} from "../Api_Call/ApiCall"
 import './Home.css'
 import Select from 'react-select'
 import { useEffect, useState } from "react"
@@ -117,6 +117,10 @@ function HomePage(props) {
         res = addExpenses(val)
         console.log(res);
 
+    }
+
+    const generateReport=()=>{
+       generateReportApi();
     }
 
     const viewExpense = async () => {
@@ -277,6 +281,10 @@ function HomePage(props) {
             <>{showProfit && <div>
                 Profit : {profit ? profit.totalProfit : "Loading"} <br></br>
                 TotalSales w.o exceptional cust : {profit ? profit.totalSales : "Loading"}
+                <br></br>
+                <Button className='button' onClick={(e) => {
+                    generateReport();
+                }}>  {"Generate Excel Report"} </Button>
             </div>}
             </>
         </>
