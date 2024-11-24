@@ -106,6 +106,8 @@ function SalesData(props) {
             setOthers(data.others);
             setOthersPrice(data.othersPrice);
             setLuggageExpense(data.luggageExpense);
+            setOutStanding(data.outStanding);
+            setCollection(data.collection);
         }
     }, [propData])
 

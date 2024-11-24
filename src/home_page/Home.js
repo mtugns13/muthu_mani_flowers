@@ -254,6 +254,7 @@ function HomePage(props) {
                         pachai :{salesDiff.pachai}<br />
                         pichiPoo : {salesDiff.pichiPoo}<br />
                         appleYellow :{salesDiff.appleYellow}<br />
+                        kozhi : {salesDiff.koli}<br />
                         appleRed : {salesDiff.appleRed}<br />
                         Others : {salesDiff.others}<br />
                         Todays Collection : {salesDiff.daysCollection}
