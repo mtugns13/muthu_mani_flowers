@@ -277,29 +277,29 @@ const out= "";
             </Button>
 
             {!showEdit && < div className='ipText2'>
-                {sammangiKeera !== 0 && <> SammangiKeera : {sammangiKeera} Price: {samPrice} Total :{sammangiKeera * samPrice > 0 && sammangiKeera * samPrice}</>}
-                {sammangiTrichy !== 0 && <><br />  sammangiTrichy : {sammangiTrichy} Price: {samTricyPrice} Total :{(sammangiTrichy * samTricyPrice) > 0 && sammangiTrichy * samTricyPrice}</>}
-                {panner !== 0 && <><br />  panner : {panner} Price: {pannerPrice} Total :{panner * pannerPrice > 0 && panner * pannerPrice}</>}
-                {malli !== 0 && <><br />  malli : {malli} Price: {malliPrice} Total :{malli * malliPrice > 0 && malli * malliPrice}</>}
-                {arali !== 0 && <><br />  arali : {arali} Price: {araliPrice} Total :{arali * araliPrice > 0 && arali * araliPrice}</>}
-                {sendi != 0 && <><br />  sendi : {sendi} Price: {sendiPrice} Total :{sendi * sendiPrice > 0 && sendi * sendiPrice}</>}
-                {sevvanthiYellow !== 0 && <><br />  sevvanthiYellow : {sevvanthiYellow} Price: {sevvanthiYellowPrice} Total :{sevvanthiYellow * sevvanthiYellowPrice > 0 && sevvanthiYellow * sevvanthiYellowPrice}</>}
-                {sevvanthiWhite !== 0 && <><br />  sevvanthiWhite : {sevvanthiWhite} Price: {sevvanthiWhitePrice} Total :{sevvanthiWhite * sevvanthiWhitePrice > 0 && sevvanthiWhite * sevvanthiWhitePrice}</>}
-                {mullai !== 0 && <><br />  mullai : {mullai} Price: {mullaiPrice} Total :{mullai * mullaiPrice > 0 && mullai * mullaiPrice}</>}
-                {kanaga !== 0 && <><br />  kanaga : {kanaga} Price: {kanagaPrice} Total :{kanaga * kanagaPrice > 0 && kanaga * kanagaPrice}</>}
-                {karattan !== 0 && <><br />  karattan : {karattan} Price: {karattanPrice} Total :{karattan * karattanPrice > 0 && karattan * karattanPrice}</>}
-                {pachai !== 0 && <><br />  pachai : {pachai} Price: {pachaiPrice} Total :{pachai * pachaiPrice > 0 && pachai * pachaiPrice}</>}
-                {pichiPoo !== 0 && <><br />  pichiPoo : {pichiPoo} Price: {pichiPooPrice} Total :{pichiPoo * pichiPooPrice > 0 && pichiPoo * pichiPooPrice}</>}
-                {appleYellow !== 0 && <><br />  appleYellow : {appleYellow} Price: {appleYellowPrice} Total :{appleYellow * appleYellowPrice > 0 && appleYellow * appleYellowPrice}</>}
-                {appleRed !== 0 && <><br />  appleRed : {appleRed} Price: {appleRedPrice} Total :{appleRed * appleRedPrice > 0 && appleRed * appleRedPrice}</>}
-                {koli !== 0 && <><br />  Koli : {koli} Price: {koliPrice} Total :{koli * koliPrice > 0 && koli * koliPrice}</>}
-                {others !== 0 && <><br />  Others : {others} Price: {othersPrice} Total :{others * othersPrice > 0 && others * othersPrice}</>}
-                {luggageExpense !== 0 && <><br />  LuggageExpense : {luggageExpense} Total :{luggageExpense > 0 && luggageExpense}</>}
-               
+                {sammangiKeera !== 0 && <> SammangiKeera : {sammangiKeera} Price: {samPrice} Total : {(sammangiKeera * samPrice) !== 0 && sammangiKeera * samPrice}</>}
+                {sammangiTrichy !== 0 && <><br /> sammangiTrichy : {sammangiTrichy} Price: {samTricyPrice} Total : {(sammangiTrichy * samTricyPrice) !== 0 && sammangiTrichy * samTricyPrice}</>}
+                {panner !== 0 && <><br /> panner : {panner} Price: {pannerPrice} Total : {(panner * pannerPrice) !== 0 && panner * pannerPrice}</>}
+                {malli !== 0 && <><br /> malli : {malli} Price: {malliPrice} Total : {(malli * malliPrice) !== 0 && malli * malliPrice}</>}
+                {arali !== 0 && <><br /> arali : {arali} Price: {araliPrice} Total : {(arali * araliPrice) !== 0 && arali * araliPrice}</>}
+                {sendi !== 0 && <><br /> sendi : {sendi} Price: {sendiPrice} Total : {(sendi * sendiPrice) !== 0 && sendi * sendiPrice}</>}
+                {sevvanthiYellow !== 0 && <><br /> sevvanthiYellow : {sevvanthiYellow} Price: {sevvanthiYellowPrice} Total : {(sevvanthiYellow * sevvanthiYellowPrice) !== 0 && sevvanthiYellow * sevvanthiYellowPrice}</>}
+                {sevvanthiWhite !== 0 && <><br /> sevvanthiWhite : {sevvanthiWhite} Price: {sevvanthiWhitePrice} Total : {(sevvanthiWhite * sevvanthiWhitePrice) !== 0 && sevvanthiWhite * sevvanthiWhitePrice}</>}
+                {mullai !== 0 && <><br /> mullai : {mullai} Price: {mullaiPrice} Total : {(mullai * mullaiPrice) !== 0 && mullai * mullaiPrice}</>}
+                {kanaga !== 0 && <><br /> kanaga : {kanaga} Price: {kanagaPrice} Total : {(kanaga * kanagaPrice) !== 0 && kanaga * kanagaPrice}</>}
+                {karattan !== 0 && <><br /> karattan : {karattan} Price: {karattanPrice} Total : {(karattan * karattanPrice) !== 0 && karattan * karattanPrice}</>}
+                {pachai !== 0 && <><br /> pachai : {pachai} Price: {pachaiPrice} Total : {(pachai * pachaiPrice) !== 0 && pachai * pachaiPrice}</>}
+                {pichiPoo !== 0 && <><br /> pichiPoo : {pichiPoo} Price: {pichiPooPrice} Total : {(pichiPoo * pichiPooPrice) !== 0 && pichiPoo * pichiPooPrice}</>}
+                {appleYellow !== 0 && <><br /> appleYellow : {appleYellow} Price: {appleYellowPrice} Total : {(appleYellow * appleYellowPrice) !== 0 && appleYellow * appleYellowPrice}</>}
+                {appleRed !== 0 && <><br /> appleRed : {appleRed} Price: {appleRedPrice} Total : {(appleRed * appleRedPrice) !== 0 && appleRed * appleRedPrice}</>}
+                {koli !== 0 && <><br /> Koli : {koli} Price: {koliPrice} Total : {(koli * koliPrice) !== 0 && koli * koliPrice}</>}
+                {others !== 0 && <><br /> Others : {others} Price: {othersPrice} Total : {(others * othersPrice) !== 0 && others * othersPrice}</>}
+                {luggageExpense !== 0 && <><br /> LuggageExpense : {luggageExpense} Total : {luggageExpense !== 0 && luggageExpense}</>}
+
                 <br />
                 Collection : {collection}<br />
                 Outstanding :{outStanding}<br />
-                Total Values : {outstandingValue > 0 ? outstandingValue : 0}
+                Total Values : {outstandingValue !== 0 ? outstandingValue : 0}
             </div>}
             {showEdit && <div>
                 <p className='ipText' > Sammangi.Keera : <InputText type="number" value={sammangiKeera} onChange={(e) => setSammangiKeera(e.target.value)} placeholder="Enter kg" />
