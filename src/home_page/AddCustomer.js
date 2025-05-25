@@ -208,12 +208,14 @@ const out= "";
             "appleYellow": appleYellow,
             "appleYellowPrice": appleYellowPrice,
             "collection": collection,
-            "outStanding": variable,
             "koli": koli,
             "koliPrice": koliPrice,
             "others": others,
             "othersPrice": othersPrice,
-            "luggageExpense": luggageExpense
+            "luggageExpense": luggageExpense,
+            "totalSales": outstandingValue ? outstandingValue : 0,
+            "outStanding": outStanding + (outstandingValue !== 0 && outstandingValue) - (collection !== 0 && collection)
+
 
 
         }
@@ -301,54 +303,145 @@ const out= "";
                 Outstanding :{outStanding}<br />
                 Total Values : {outstandingValue !== 0 ? outstandingValue : 0}
             </div>}
-            {showEdit && <div>
-                <p className='ipText' > Sammangi.Keera : <InputText type="number" value={sammangiKeera} onChange={(e) => setSammangiKeera(e.target.value)} placeholder="Enter kg" />
-                    {sammangiKeera > 0 && price}
-                    {sammangiKeera > 0 && <InputText value={samPrice} onChange={(e) => setSamPrice(e.target.value)} placeholder="Enter Price" />}   {(sammangiKeera * samPrice) > 0 ? (sammangiKeera * samPrice) : 0} </p>
-                <p className='ipText' > Sammangi.Trichy : <InputText value={sammangiTrichy} onChange={(e) => setSammangiTrichy(e.target.value)} placeholder="Enter kg" />  {sammangiTrichy > 0 && price}
-                    {sammangiTrichy > 0 && <InputText value={samTricyPrice} onChange={(e) => setSamTricyPrice(e.target.value)} placeholder="Enter Price" />}  {(sammangiTrichy * samTricyPrice) > 0 ? (sammangiTrichy * samTricyPrice) : 0}</p>
-                <p className='ipText' > Panner : <InputText value={panner} onChange={(e) => setPanner(e.target.value)} placeholder="Enter kg" />   {panner > 0 && price}
-                    {panner > 0 && <InputText value={pannerPrice} onChange={(e) => setPannerPrice(e.target.value)} placeholder="Enter Price" />}  {(panner * pannerPrice) > 0 ? (panner * pannerPrice) : 0} </p>
-                <p className='ipText' > Malli : <InputText value={malli} onChange={(e) => setMalli(e.target.value)} placeholder="Enter kg" />   {malli > 0 && price}
-                    {malli > 0 && <InputText value={malliPrice} onChange={(e) => setMalliPrice(e.target.value)} placeholder="Enter Price" />}  {(malli * malliPrice) > 0 ? (malli * malliPrice) : 0}</p>
-                <p className='ipText' >  Arali : <InputText value={arali} onChange={(e) => setArali(e.target.value)} placeholder="Enter kg" />   {arali > 0 && price}
-                    {arali > 0 && <InputText value={araliPrice} onChange={(e) => setAraliPrice(e.target.value)} placeholder="Enter Price" />} {(arali * araliPrice) > 0 ? (arali * araliPrice) : 0} </p>
-                <p className='ipText' >  Sendi : <InputText value={sendi} onChange={(e) => setSendi(e.target.value)} placeholder="Enter kg" />   {sendi > 0 && price}
-                    {sendi > 0 && <InputText value={sendiPrice} onChange={(e) => setSendiPrice(e.target.value)} placeholder="Enter Price" />}  {(sendi * sendiPrice) > 0 ? (sendi * sendiPrice) : 0}</p>
-                <p className='ipText' >  sevvanthiYellow : <InputText value={sevvanthiYellow} onChange={(e) => setSevvanthiYellow(e.target.value)} placeholder="Enter kg" />    {sevvanthiYellow > 0 && price}
-                    {sevvanthiYellow > 0 && <InputText value={sevvanthiYellowPrice} onChange={(e) => setSevvanthiYellowPricePrice(e.target.value)} placeholder="Enter Price" />} {(sevvanthiYellow * sevvanthiYellowPrice) > 0 ? (sevvanthiYellow * sevvanthiYellowPrice) : 0} </p>
-                <p className='ipText' > sevvanthiWhite : <InputText value={sevvanthiWhite} onChange={(e) => setSevvanthiWhite(e.target.value)} placeholder="Enter kg" />   {sevvanthiWhite > 0 && price}
-                    {sevvanthiWhite > 0 && <InputText value={sevvanthiWhitePrice} onChange={(e) => setSevvanthiWhitePricePrice(e.target.value)} placeholder="Enter Price" />}  {(sevvanthiWhite * sevvanthiWhitePrice) > 0 ? (sevvanthiWhite * sevvanthiWhitePrice) : 0}</p>
+       {showEdit && <div>
+         <p className='ipText'> Sammangi.Keera :
+        <InputText type="number" value={sammangiKeera} onChange={(e) => setSammangiKeera(e.target.value)} placeholder="Enter kg" />
+        {sammangiKeera !== 0 && price}
+        {sammangiKeera !== 0 && <InputText value={samPrice} onChange={(e) => setSamPrice(e.target.value)} placeholder="Enter Price" />}
+        {(sammangiKeera * samPrice) !== 0 ? (sammangiKeera * samPrice) : 0}
+    </p>
 
-                <p className='ipText' > Mullai : <InputText value={mullai} onChange={(e) => setMullai(e.target.value)} placeholder="Enter kg" />   {mullai > 0 && price}
-                    {mullai > 0 && <InputText value={mullaiPrice} onChange={(e) => setMullaiPrice(e.target.value)} placeholder="Enter Price" />}  {(mullai * mullaiPrice) > 0 ? (mullai * mullaiPrice) : 0}</p>
-                <p className='ipText' >  Kanagambaram : <InputText value={kanaga} onChange={(e) => setKanaga(e.target.value)} placeholder="Enter kg" />    {kanaga > 0 && price}
-                    {kanaga > 0 && <InputText value={kanagaPrice} onChange={(e) => setKanagaPrice(e.target.value)} placeholder="Enter Price" />} {(kanaga * kanagaPrice) > 0 ? (kanaga * kanagaPrice) : 0} </p>
-                <p className='ipText' >  Karattan : <InputText value={karattan} onChange={(e) => setKarattan(e.target.value)} placeholder="Enter kg" />    {karattan > 0 && price}
-                    {karattan > 0 && <InputText value={karattanPrice} onChange={(e) => setKarattanPrice(e.target.value)} placeholder="Enter Price" />} {(karattan * karattanPrice) > 0 ? (karattan * karattanPrice) : 0} </p>
-                <p className='ipText' >  Pachai : <InputText value={pachai} onChange={(e) => setPachai(e.target.value)} placeholder="Enter kg" />    {pachai > 0 && price}
-                    {pachai > 0 && <InputText value={pachaiPrice} onChange={(e) => setPachaiPrice(e.target.value)} placeholder="Enter Price" />} {(pachai * pachaiPrice) > 0 ? (pachai * pachaiPrice) : 0} </p>
-                <p className='ipText' >  PichiPoo : <InputText value={pichiPoo} onChange={(e) => setPichiPoo(e.target.value)} placeholder="Enter kg" />    {pichiPoo > 0 && price}
-                    {pichiPoo > 0 && <InputText value={pichiPooPrice} onChange={(e) => setPichiPooPrice(e.target.value)} placeholder="Enter Price" />} {(pichiPoo * pichiPooPrice) > 0 ? (pichiPoo * pichiPooPrice) : 0} </p>
-                <p className='ipText' >  AppleYellow : <InputText value={appleYellow} onChange={(e) => setAppleYellow(e.target.value)} placeholder="Enter kg" />    {appleYellow > 0 && price}
-                    {appleYellow > 0 && <InputText value={appleYellowPrice} onChange={(e) => setAppleYellowPrice(e.target.value)} placeholder="Enter Price" />}   {(appleYellow * appleYellowPrice) > 0 ? (appleYellow * appleYellowPrice) : 0}</p>
-                <p className='ipText' > AppleRed : <InputText value={appleRed} onChange={(e) => setAppleRed(e.target.value)} placeholder="Enter kg" />    {appleRed > 0 && price}
-                    {appleRed > 0 && <InputText value={appleRedPrice} onChange={(e) => setAppleRedPrice(e.target.value)} placeholder="Enter Price" />} {(appleRed * appleRedPrice) > 0 ? (appleRed * appleRedPrice) : 0} </p>
-                <p className='ipText' >  Koli : <InputText value={koli} onChange={(e) => setKoli(e.target.value)} placeholder="Enter kg" />    {setKoli > 0 && price}
-                    {koli > 0 && <InputText value={koliPrice} onChange={(e) => setKoliPrice(e.target.value)} placeholder="Enter Price" />}   {(koli * koliPrice) > 0 ? (koli * koliPrice) : 0}</p>
+    <p className='ipText'> Sammangi.Trichy :
+        <InputText value={sammangiTrichy} onChange={(e) => setSammangiTrichy(e.target.value)} placeholder="Enter kg" />
+        {sammangiTrichy !== 0 && price}
+        {sammangiTrichy !== 0 && <InputText value={samTricyPrice} onChange={(e) => setSamTricyPrice(e.target.value)} placeholder="Enter Price" />}
+        {(sammangiTrichy * samTricyPrice) !== 0 ? (sammangiTrichy * samTricyPrice) : 0}
+    </p>
 
-                <p className='ipText' >  Others : <InputText value={others} onChange={(e) => setOthers(e.target.value)} placeholder="Enter kg" />    {setOthers > 0 && price}
-                    {others > 0 && <InputText value={othersPrice} onChange={(e) => setOthersPrice(e.target.value)} placeholder="Enter Price" />}   {(others * othersPrice) > 0 ? (others * othersPrice) : 0}</p>
+    <p className='ipText'> Panner :
+        <InputText value={panner} onChange={(e) => setPanner(e.target.value)} placeholder="Enter kg" />
+        {panner !== 0 && price}
+        {panner !== 0 && <InputText value={pannerPrice} onChange={(e) => setPannerPrice(e.target.value)} placeholder="Enter Price" />}
+        {(panner * pannerPrice) !== 0 ? (panner * pannerPrice) : 0}
+    </p>
 
-                <p className='ipText' style={{ justifyContent: 'center' }} > Expences : <InputText value={luggageExpense} onChange={(e) => { setLuggageExpense(e.target.value); }} placeholder="Enter Collection Amount" />  </p>
-                <p className='ipText' style={{ justifyContent: 'center' }} > Collection : <InputText value={collection} onChange={(e) => { setCollection(e.target.value); }} placeholder="Enter Collection Amount" />  </p>
-                <p className='ipText' style={{ justifyContent: 'center' }}>  Outstanding : <InputText readOnly={true} value={outStanding + (outstandingValue > 0 && outstandingValue) - (collection > 0 && collection)}
-                 onChange={variable=(outStanding + (outstandingValue > 0 && outstandingValue) - (collection > 0 && collection))} placeholder={outStanding + outstandingValue - collection} />  </p>
-                <p className='ipText' style={{ justifyContent: 'center' }}>  Total sales : <InputText readOnly={true} value={outstandingValue > 0 ? outstandingValue : 0} />  </p>
+    <p className='ipText'> Malli :
+        <InputText value={malli} onChange={(e) => setMalli(e.target.value)} placeholder="Enter kg" />
+        {malli !== 0 && price}
+        {malli !== 0 && <InputText value={malliPrice} onChange={(e) => setMalliPrice(e.target.value)} placeholder="Enter Price" />}
+        {(malli * malliPrice) !== 0 ? (malli * malliPrice) : 0}
+    </p>
 
-                {<button onClick={() => {saveSalesData(); }}>  {"Save"}</button>}
+    <p className='ipText'> Arali :
+        <InputText value={arali} onChange={(e) => setArali(e.target.value)} placeholder="Enter kg" />
+        {arali !== 0 && price}
+        {arali !== 0 && <InputText value={araliPrice} onChange={(e) => setAraliPrice(e.target.value)} placeholder="Enter Price" />}
+        {(arali * araliPrice) !== 0 ? (arali * araliPrice) : 0}
+    </p>
 
-            </div>}
+    <p className='ipText'> Sendi :
+        <InputText value={sendi} onChange={(e) => setSendi(e.target.value)} placeholder="Enter kg" />
+        {sendi !== 0 && price}
+        {sendi !== 0 && <InputText value={sendiPrice} onChange={(e) => setSendiPrice(e.target.value)} placeholder="Enter Price" />}
+        {(sendi * sendiPrice) !== 0 ? (sendi * sendiPrice) : 0}
+    </p>
+
+    <p className='ipText'> sevvanthiYellow :
+        <InputText value={sevvanthiYellow} onChange={(e) => setSevvanthiYellow(e.target.value)} placeholder="Enter kg" />
+        {sevvanthiYellow !== 0 && price}
+        {sevvanthiYellow !== 0 && <InputText value={sevvanthiYellowPrice} onChange={(e) => setSevvanthiYellowPricePrice(e.target.value)} placeholder="Enter Price" />}
+        {(sevvanthiYellow * sevvanthiYellowPrice) !== 0 ? (sevvanthiYellow * sevvanthiYellowPrice) : 0}
+    </p>
+
+    <p className='ipText'> sevvanthiWhite :
+        <InputText value={sevvanthiWhite} onChange={(e) => setSevvanthiWhite(e.target.value)} placeholder="Enter kg" />
+        {sevvanthiWhite !== 0 && price}
+        {sevvanthiWhite !== 0 && <InputText value={sevvanthiWhitePrice} onChange={(e) => setSevvanthiWhitePricePrice(e.target.value)} placeholder="Enter Price" />}
+        {(sevvanthiWhite * sevvanthiWhitePrice) !== 0 ? (sevvanthiWhite * sevvanthiWhitePrice) : 0}
+    </p>
+
+    <p className='ipText'> Mullai :
+        <InputText value={mullai} onChange={(e) => setMullai(e.target.value)} placeholder="Enter kg" />
+        {mullai !== 0 && price}
+        {mullai !== 0 && <InputText value={mullaiPrice} onChange={(e) => setMullaiPrice(e.target.value)} placeholder="Enter Price" />}
+        {(mullai * mullaiPrice) !== 0 ? (mullai * mullaiPrice) : 0}
+    </p>
+
+    <p className='ipText'> Kanagambaram :
+        <InputText value={kanaga} onChange={(e) => setKanaga(e.target.value)} placeholder="Enter kg" />
+        {kanaga !== 0 && price}
+        {kanaga !== 0 && <InputText value={kanagaPrice} onChange={(e) => setKanagaPrice(e.target.value)} placeholder="Enter Price" />}
+        {(kanaga * kanagaPrice) !== 0 ? (kanaga * kanagaPrice) : 0}
+    </p>
+
+    <p className='ipText'> Karattan :
+        <InputText value={karattan} onChange={(e) => setKarattan(e.target.value)} placeholder="Enter kg" />
+        {karattan !== 0 && price}
+        {karattan !== 0 && <InputText value={karattanPrice} onChange={(e) => setKarattanPrice(e.target.value)} placeholder="Enter Price" />}
+        {(karattan * karattanPrice) !== 0 ? (karattan * karattanPrice) : 0}
+    </p>
+
+    <p className='ipText'> Pachai :
+        <InputText value={pachai} onChange={(e) => setPachai(e.target.value)} placeholder="Enter kg" />
+        {pachai !== 0 && price}
+        {pachai !== 0 && <InputText value={pachaiPrice} onChange={(e) => setPachaiPrice(e.target.value)} placeholder="Enter Price" />}
+        {(pachai * pachaiPrice) !== 0 ? (pachai * pachaiPrice) : 0}
+    </p>
+
+    <p className='ipText'> PichiPoo :
+        <InputText value={pichiPoo} onChange={(e) => setPichiPoo(e.target.value)} placeholder="Enter kg" />
+        {pichiPoo !== 0 && price}
+        {pichiPoo !== 0 && <InputText value={pichiPooPrice} onChange={(e) => setPichiPooPrice(e.target.value)} placeholder="Enter Price" />}
+        {(pichiPoo * pichiPooPrice) !== 0 ? (pichiPoo * pichiPooPrice) : 0}
+    </p>
+
+    <p className='ipText'> AppleYellow :
+        <InputText value={appleYellow} onChange={(e) => setAppleYellow(e.target.value)} placeholder="Enter kg" />
+        {appleYellow !== 0 && price}
+        {appleYellow !== 0 && <InputText value={appleYellowPrice} onChange={(e) => setAppleYellowPrice(e.target.value)} placeholder="Enter Price" />}
+        {(appleYellow * appleYellowPrice) !== 0 ? (appleYellow * appleYellowPrice) : 0}
+    </p>
+
+    <p className='ipText'> AppleRed :
+        <InputText value={appleRed} onChange={(e) => setAppleRed(e.target.value)} placeholder="Enter kg" />
+        {appleRed !== 0 && price}
+        {appleRed !== 0 && <InputText value={appleRedPrice} onChange={(e) => setAppleRedPrice(e.target.value)} placeholder="Enter Price" />}
+        {(appleRed * appleRedPrice) !== 0 ? (appleRed * appleRedPrice) : 0}
+    </p>
+
+    <p className='ipText'> Koli :
+        <InputText value={koli} onChange={(e) => setKoli(e.target.value)} placeholder="Enter kg" />
+        {koli !== 0 && price}
+        {koli !== 0 && <InputText value={koliPrice} onChange={(e) => setKoliPrice(e.target.value)} placeholder="Enter Price" />}
+        {(koli * koliPrice) !== 0 ? (koli * koliPrice) : 0}
+    </p>
+
+    <p className='ipText'> Others :
+        <InputText value={others} onChange={(e) => setOthers(e.target.value)} placeholder="Enter kg" />
+        {others !== 0 && price}
+        {others !== 0 && <InputText value={othersPrice} onChange={(e) => setOthersPrice(e.target.value)} placeholder="Enter Price" />}
+        {(others * othersPrice) !== 0 ? (others * othersPrice) : 0}
+    </p>
+
+    <p className='ipText' style={{ justifyContent: 'center' }}> Expenses :
+        <InputText value={luggageExpense} onChange={(e) => setLuggageExpense(e.target.value)} placeholder="Enter Collection Amount" />
+    </p>
+
+    <p className='ipText' style={{ justifyContent: 'center' }}> Collection :
+        <InputText value={collection} onChange={(e) => setCollection(e.target.value)} placeholder="Enter Collection Amount" />
+    </p>
+
+    <p className='ipText' style={{ justifyContent: 'center' }}> Outstanding :
+        <InputText readOnly={true} value={outStanding + (outstandingValue !== 0 && outstandingValue) - (collection !== 0 && collection)} placeholder={outStanding + outstandingValue - collection} />
+    </p>
+
+    <p className='ipText' style={{ justifyContent: 'center' }}> Total sales :
+        <InputText readOnly={true} value={outstandingValue !== 0 ? outstandingValue : 0} />
+    </p>
+
+    <button onClick={() => saveSalesData()}>{"Save"}</button>
+</div>}
+
 
         </>
     )
